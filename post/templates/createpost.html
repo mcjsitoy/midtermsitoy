@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block head %}
+Create a Question
+{% endblock %}
+
+{% block body %}
+<form action ="{% url 'post:createpost' %}" method = "POST">
+  {% csrf_token %}
+  {% for field in form %}
+   {{field.errors}}
+   {{field.label}} {{ field }}
+ {% endfor %}
+
+
+
+
+
+
+<input type ="submit" value ="Create">
+
+</form>
+{% endblock %}
